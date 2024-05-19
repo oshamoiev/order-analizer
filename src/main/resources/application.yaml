@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: OrderConsumer
+
+  datasource:
+    url: jdbc:mariadb://localhost:3306/streaming
+    username: root
+    password: streaming
+    driver-class-name: org.mariadb.jdbc.Driver
+
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: "streams-orders"
+    input:
+      topic: "streaming.orders.input"
+    streams:
+      application-id: "streaming-analytics"
+
